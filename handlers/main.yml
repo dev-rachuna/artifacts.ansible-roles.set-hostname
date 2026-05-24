@@ -1,0 +1,7 @@
+---
+- name: Reboot system
+  ansible.builtin.reboot:
+    reboot_timeout: 600
+  when:
+    - ansible_host not in ['localhost', '127.0.0.1']
+    - not (in_disable_reboot | bool)

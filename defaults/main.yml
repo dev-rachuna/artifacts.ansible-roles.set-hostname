@@ -1,0 +1,3 @@
+---
+in_hostname_fqdn: "{{ inventory_hostname }}"
+in_disable_reboot: false

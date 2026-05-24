@@ -1,0 +1,32 @@
+---
+galaxy_info:
+  role_name: set_hostname
+  namespace: pl_rachuna_net
+  author: "Maciej Rachuna"
+  description: "Set hostname of the machine on Debian, Ubuntu, RHEL, AlmaLinux, and Alpine."
+  license: "CC-BY-NC-SA-4.0"
+  min_ansible_version: "2.9"
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Alpine
+      versions:
+        - all
+    - name: EL
+      versions:
+        - "7"
+        - "8"
+        - "9"
+  galaxy_tags:
+    - hostname
+    - networking
+    - system
+    - configuration
+    - linux
+
+dependencies: []

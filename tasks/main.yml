@@ -1,0 +1,16 @@
+---
+- name: Change hostname
+  ansible.builtin.hostname:
+    name: "{{ in_hostname_fqdn }}"
+  notify:
+    - Reboot system
+
+- name: Change /etc/hosts
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: '^127\.0\.1\.1'
+    line: >-
+      127.0.1.1       {{ in_hostname_fqdn }}{{ '       ' + in_hostname_fqdn | split('.') | first if '.' in in_hostname_fqdn else '' }}
+    state: present
+  notify:
+    - Reboot system
